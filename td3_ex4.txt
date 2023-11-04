@@ -1,0 +1,44 @@
+#include <iostream>
+#include <set>
+#include <vector>
+#include <list>
+
+using namespace std ;
+
+template <typename Iterator, typename T>
+bool recherche(Iterator begin, Iterator end, const T& valeur) {
+    for (Iterator it = begin; it != end; ++it) {
+        if (*it == valeur) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int main() {
+    
+    set<int> ensembleInt;
+    for (int i = 1; i <= 100; ++i) {
+        ensembleInt.insert(i);
+    }
+
+    
+    vector<string> vecteurString = {"C++", "Programmation", "oriente", "objet"};
+    string valeurRecherchee = "C++";
+    bool trouveString = recherche(vecteurString.begin(), vecteurString.end(), valeurRecherchee);
+    cout << "La valeur '" << valeurRecherchee << "' est présente dans le vecteur de strings : " << trouveString <<endl;
+
+    
+    list<int> listeInt = { 12, 20, 36, 38, 50 };
+    int valeurRechercheeInt = 36;
+    bool trouveInt = recherche(listeInt.begin(), listeInt.end(), valeurRechercheeInt);
+    cout << "La valeur " << valeurRechercheeInt << " est présente dans la liste d'entiers : " << trouveInt <<endl;
+
+    
+    float tableauFloat[] = { 1.5, 2.2, 3.6, 4.5, 8.5 };
+    float valeurRechercheeFloat = 4.5;
+    bool trouveFloat = recherche(begin(tableauFloat), end(tableauFloat), valeurRechercheeFloat);
+    cout << "La valeur " << valeurRechercheeFloat << " est présente dans le tableau de floats : " << trouveFloat <<endl;
+
+    return 0;
+}

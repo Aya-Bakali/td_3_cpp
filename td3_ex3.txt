@@ -1,0 +1,44 @@
+#include <iostream>
+#include <list>
+
+struct Personne {
+    char nom[] 
+    char prenom[]
+    int age;
+};
+
+bool comparerPersonnes(const Personne& personne1, const Personne& personne2) {
+    if (personne1.nom == personne2.nom) {
+        return personne1.prenom < personne2.prenom;
+    }
+    return personne1.nom < personne2.nom;
+}
+
+int main () {
+    list<Personne> listePersonnes;
+    char continuer = 'o';
+
+    while (continuer == 'o' || continuer == 'O') {
+        Personne nouvellePersonne;
+
+        cout << "Entrez le nom : ";
+        cin >> nouvellePersonne.nom;
+        cout << "Entrez le prénom : ";
+        cin >> nouvellePersonne.prenom;
+        cout << "Entrez l'âge : ";
+        cin >> nouvellePersonne.age;
+
+        listePersonnes.push_back(nouvellePersonne);
+
+        cout << "Voulez-vous ajouter une autre personne ? (o/n) : ";
+        cin >> continuer;
+    }
+    listePersonnes.sort(comparerPersonnes);
+
+    cout << "Liste triée des personnes :";
+    for (const Personne& personne : listePersonnes) {
+        cout << "Nom : " << personne.nom << ", Prénom : " << personne.prenom << ", Âge :" << personne.age <<endl;
+    }
+
+    return 0;
+}

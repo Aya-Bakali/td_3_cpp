@@ -1,0 +1,11 @@
+a. Le code tel qu'il est écrit actuellement provoquera une erreur de compilation car vous essayez d'initialiser un objet
+        point<char> avec des entiers (60 et 65).
+Cela ne fonctionne pas car point<char> attend des valeurs de type char, pas des entiers.
+Pour corriger cela,on peut utiliser des caractères pour l'initialisation de l'objet point<char>.
+
+    point<char> p('60', '65');
+    p.affiche();
+
+
+b. Pour que les instructions affichent "Coordonnees : 60 65" avec des entiers,on peut  modifier la définition de la classe 
+point pour qu'elle puisse accepter des entiers au lieu de caractères.

@@ -1,0 +1,53 @@
+#include <iostream>
+
+using namespace std ;
+
+class Complexe{
+    private:
+        float reel ;
+        float img ;
+    public:
+        Complexe(double r = 0, double i = 0) : reel(r),    img(i) {}
+        
+        Complexe operator+(const Complexe& autre) const {
+            return Complexe(reel + autre.reel, img + autre.img);
+        }
+
+        Complexe operator-(const Complexe& autre) const {
+            return Complexe(reel - autre.reel, img - autre.img);
+        }
+        
+        void afficher() const {
+        cout << "Partie réelle : " << reel <<endl ;
+        cout << "Partie imaginaire : " << img <<endl;
+        }
+    
+};
+int main(){
+    float reel1, imaginaire1;
+    float reel2, imaginaire2;
+    
+    cout << "Entrez la partie réelle du premier nombre complexe : ";
+    cin >> reel1;
+    cout << "Entrez la partie imaginaire du premier nombre complexe : ";
+    cin >> imaginaire1;
+
+    cout << "Entrez la partie réelle du deuxième nombre complexe : ";
+    cin >> reel2;
+    cout << "Entrez la partie imaginaire du deuxième nombre complexe : ";
+    cin >> imaginaire2;
+    Complexe complexe1(reel1, imaginaire1);
+    Complexe complexe2(reel2, imaginaire2);
+
+    Complexe somme = complexe1 + complexe2;
+    Complexe difference = complexe1 - complexe2;
+
+    cout << "Somme : ";
+    somme.afficher();
+
+    cout << "Différence : ";
+    difference.afficher();
+
+   
+    return 0;
+}

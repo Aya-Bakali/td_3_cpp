@@ -1,0 +1,14 @@
+les résultats fournis par ce programme sont :
+
+Pour C1 :
+
+** construction objet B : 1 0
+** construction objet A : 1 2
+** construction objet C : 3 3
+
+Pour C2 :
+
+** construction objet A : 10 2
+** construction objet B : 1 5
+** construction objet C : 12 21
+

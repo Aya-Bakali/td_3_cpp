@@ -1,0 +1,5 @@
+le résultat de l'exécution du programme sera :
+
+dans f : 999
+dans main : 999
+suite main
